@@ -1,0 +1,28 @@
+/* Between Bloom and Decay — page styling.
+   The canvas is drawn at a tiny internal resolution and scaled up
+   by an integer factor in sketch.js; these rules keep the pixels crisp. */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #22363a; /* same as PALETTE.void so the letterbox blends in */
+  overflow: hidden;
+}
+
+#stage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  display: block;
+  image-rendering: crisp-edges;    /* older Firefox */
+  image-rendering: pixelated;      /* all modern browsers */
+  -ms-interpolation-mode: nearest-neighbor;
+  cursor: crosshair;
+}
